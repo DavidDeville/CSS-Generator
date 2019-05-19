@@ -75,7 +75,7 @@ function permission($count, $tab)
 	}
 	else
 	{
-		option_l($dir_path, $parametre, $count, $tab);
+		option_s($dir_path, $parametre, $count, $tab);
 	}
 }
 permission($argc, $tab)

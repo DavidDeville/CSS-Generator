@@ -4,7 +4,7 @@
 function generate_css($tab, $sprite, $dir_path, $names)
 {
 	$posx = 0;
-	$handle = fopen("$dir_path/" . $names['style'] . ".css", "a+");
+	$handle = fopen("$dir_path/" . $names['style'] . ".css", "w");
 	fwrite($handle, ".sprite {
 			background-image: url($dir_path/" . $names['name'] . ".png);
 			background-repeat: no-repeat;

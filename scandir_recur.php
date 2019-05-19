@@ -79,7 +79,7 @@ function my_scandir_recur($dir_path)
 
 	if ($handle = opendir("$dir_path/"))
 	{
- 		while (false !== ($entry = readdir($handle))) 
+ 		while (false !== ($entry = readdir($handle)))
  		{
 			if($entry == "." OR $entry == "..")
 			{
