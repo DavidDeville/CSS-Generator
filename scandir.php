@@ -1,5 +1,4 @@
 <?php
-//$dir_path = $argv[1];
 /*Fonction pour générer le CSS à partir du sprite*/
 
 function generate_css($tab, $sprite, $dir_path, $names)
@@ -24,7 +23,6 @@ function generate_css($tab, $sprite, $dir_path, $names)
 		}");
 		$posx = $posx + $image_width;
 	}
-	echo $image_width . PHP_EOL;
 }
 
 /*Fonction pour merge les images au sprite vide*/
@@ -57,14 +55,12 @@ function create_sprite($tab, $dir_path, $names)
 		$image_width = imagesx($img);
 		$image_height = imagesy($img);
 		$img_max_width += $image_width;
-
 		array_push($max_height_array, $image_height);
 		imagedestroy($img);
 	}
 
 	sort($max_height_array, SORT_NUMERIC);
 	$img_max_height = array_pop($max_height_array);
-	//print_r($max_height_array);
 	echo  $img_max_width . "x" . $img_max_height . PHP_EOL;
 	$sprite = imagecreatetruecolor($img_max_width, $img_max_height);
 	sprite_merge($tab, $sprite, $dir_path, $names);
@@ -87,12 +83,11 @@ function my_scandir($dir_path, $names)
 	        		echo "$entry : format invalide.\n";
 	        	}
 	    	}
-	    	//print_r($tab);
 	    	closedir($handle);
 	    }
 	}
 	else{
-		//echo "Dossier inexistant.\n";
+		echo "Dossier inexistant.\n";
 	}
 	create_sprite($tab, $dir_path, $names);
 }

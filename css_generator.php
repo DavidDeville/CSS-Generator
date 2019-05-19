@@ -2,7 +2,6 @@
 include("scandir.php");
 include("scandir_recur.php");
 $parametre = $argv;
-//$count = $argc;
 $tab = array();
 
 function option_s($dir_path, $parametre, $count, $tab)

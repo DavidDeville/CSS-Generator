@@ -1,7 +1,5 @@
 <?php
 
-//$tab = array();
-
 /*Fonction pour générer le CSS à partir du sprite*/
 
 function generate_css_recur($tab, $sprite, $dir_path, $names)
@@ -69,8 +67,6 @@ function create_sprite_recur($dir_path, $names)
 
 	sort($max_height_array, SORT_NUMERIC);
 	$img_max_height = array_pop($max_height_array);
-	//print_r($max_height_array);
-	//echo  $img_max_width . "x" . $img_max_height . PHP_EOL;
 	$sprite = imagecreatetruecolor($img_max_width, $img_max_height);
 	sprite_merge_recur($tab, $sprite, $dir_path, $names);
 }
@@ -102,7 +98,6 @@ function my_scandir_recur($dir_path)
 				echo "-$entry : format invalide.\n";
 			}
 		}
-	//	print_r($tab);
 		closedir($handle);
 	}
 }
