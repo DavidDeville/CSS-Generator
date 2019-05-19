@@ -79,9 +79,6 @@ function my_scandir($dir_path, $names)
 	        	elseif (strpos($entry, ".png")){
 	        		array_push($tab, $entry);
 	        	}
-	        	else{
-	        		echo "$entry : format invalide.\n";
-	        	}
 	    	}
 	    	closedir($handle);
 	    }

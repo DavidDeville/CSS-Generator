@@ -93,10 +93,6 @@ function my_scandir_recur($dir_path)
 			{
 				my_scandir_recur("$dir_path/$entry");
 			}
-			else
-			{
-				echo "-$entry : format invalide.\n";
-			}
 		}
 		closedir($handle);
 	}

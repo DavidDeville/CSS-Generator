@@ -44,13 +44,12 @@ function option_l($dir_path, $parametre, $count, $tab)
 	$i = 0;
 	while($i < $count-2){
 		if(strpos($parametre[$i], "--output-image=") === 0){
-			echo $parametre[$i].PHP_EOL;
 			$names['name'] = substr($parametre[$i],15);
 		}
 		elseif(strpos($parametre[$i], "--output-style=") === 0){
 			$names['style'] = substr($parametre[$i], 15);
 		}
-		if($parametre[$i] == "--recursive"){	
+		if($parametre[$i] == "--recursive"){
 			$recursive = "oui";
 		}
 		$i++;
@@ -74,19 +73,9 @@ function permission($count, $tab)
 		echo "Le dossier n'existe pas\n";
 		return;
 	}
-	elseif(file_exists("$dir_path/sprite.png"))
-	{
-		echo "Le sprite existe déjà\n";
-		return;
-	}
-	elseif(file_exists("$dir_path/style.css"))
-	{
-		echo "Le fichier CSS existe déjà.\n";
-		return;
-	}
 	else
 	{
-		option_s($dir_path, $parametre, $count, $tab);
+		option_l($dir_path, $parametre, $count, $tab);
 	}
 }
 permission($argc, $tab)
